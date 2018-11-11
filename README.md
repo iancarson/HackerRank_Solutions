@@ -1,2 +1,2 @@
 # HackeRankChallenges
-#Solves the questions given in hackerank using java language
+#Solves the challenges  given in hackerank using java language
