@@ -1,2 +1,4 @@
-# HackeRankChallenges
-#Solves the challenges  given in hackerank using java language
+
+# Hackerank solutions in java 
+# Other languages  coming out soon!!!
+
