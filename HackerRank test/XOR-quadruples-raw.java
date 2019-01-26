@@ -2,11 +2,59 @@ import java.io.*;
 import java.util.*;
 public class Permutations<T>
 {
+	static class FastReader
+	{
+		BufferedReader br;
+		StringTokenizer st;
+		public FastReader()
+		{
+			br=new BufferedReader(new InputStreamReader(System.in));
+		}
+		String next()
+		{
+			while(st==null || !st.hasMoreElements())
+			{
+				try{
+					st=new StringTokenizer(br.readLine());
+				}
+				catch(IOException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			return st.nextToken();
+		}
+		int nextInt()
+		{
+			return Integer.parseInt(next());
+		}
+		long nextLong()
+		{
+			return Long.parseLong(next());
+		}
+		double nextDouble()
+		{
+			return Double.parseDouble(next());
+		}
+		String nextLine()
+		{
+			String str="";
+			try
+			{
+				str=br.readLine();
+			}
+			catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+			return str;
+		}
+	}
 	public static void main(String[] args)
 	{
 	Permutations<Integer> obj=new Permutations<Integer>();
 	Collection<Integer> input=new ArrayList<Integer>();
-	Scanner in= new Scanner(System.in);
+	FastReader in= new FastReader();
 	int A=in.nextInt();
 	int B=in.nextInt();
 	int C=in.nextInt();
@@ -28,9 +76,24 @@ public class Permutations<T>
 	}
 	k=input.size()-i;
 	//System.out.println("p(" + input.size()+ "," + k+"):" + "Count (" + pnr.size()+"):-" +pnr);
-	System.out.println(output.size());
+	//System.out.println(output.size());
 	}
+	for(int i=0;i<output.size();i++)
+	{
+		Integer[] arr1=output.get(i).toArray();
+		Integer[] arr2=output.get(i +1).toArray();
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		for(int j=0;j<4;j++)
+		{
+			if(arr1[j]==arr2[j])
+			{
+				counter ++;
+			}
 		}
+		}
+		System.out.println(counter/4);
+	}
 	public Collection<List<T>> permute(Collection<T> input)
 	{
 	Collection<List<T>> output=new ArrayList<List<T>>();

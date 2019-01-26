@@ -19,6 +19,6 @@ public class BinaryDecimal
 	decimalNumber += remainder * Math.pow(2,i);
 	++ i;
 	}
-	return decimalNumber
+	return decimalNumber;
 	}
 }
